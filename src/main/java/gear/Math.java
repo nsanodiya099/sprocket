@@ -15,6 +15,6 @@ public class Math {
     }
 
     public Integer Product() {
-        return number_one / number_two;
+        return this.number_one / this.number_two;
     }
 }
