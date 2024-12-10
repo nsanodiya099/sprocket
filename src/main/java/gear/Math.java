@@ -22,7 +22,7 @@ public class Math {
         Result result= new Result();
         result.setOperationType(opsType);
         if(opsType.equalsIgnoreCase("sum")){
-        result.setValue(String.valueOf(this.number_one * this.number_two));
+        result.setValue(String.valueOf(this.number_one + this.number_two));
         }
 
         else if(opsType.equalsIgnoreCase("product")){
