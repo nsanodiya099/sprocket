@@ -9,20 +9,20 @@ public class MathController {
 
     private static final String template = "Math, %s!";
     private Math math; 
-
+//http://localhost:8080/math/sum?number_one=10&number_two=20
     @RequestMapping("/math/sum")
-    public String sum(@RequestParam(value="number_one", defaultValue="1") String number_one, 
+    public Result sum(@RequestParam(value="number_one", defaultValue="1") String number_one,
         @RequestParam(value="number_two", defaultValue="1") String number_two) {
-        
         math = new Math(Integer.parseInt(number_one), Integer.parseInt(number_two));
-        return String.format(template, Integer.toString(math.Sum()));
+        return math.calculate("sum");
     }
 
+//    http://localhost:8080/math/product?number_one=10&number_two=20
+
     @RequestMapping("/math/product")
-    public String multiply(@RequestParam(value="number_one", defaultValue="1") String number_one, 
+    public Result multiply(@RequestParam(value="number_one", defaultValue="1") String number_one,
         @RequestParam(value="number_two", defaultValue="1") String number_two) {
-        
         math = new Math(Integer.parseInt(number_one), Integer.parseInt(number_two));
-        return String.format(template, Integer.toString(math.Product()));
+        return math.calculate("product");
     }
 }
